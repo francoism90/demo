@@ -18,6 +18,11 @@ class RegisterTeam extends RegisterTenant
         return $form
             ->schema([
                 TextInput::make('name')->required(),
+                DatePicker::make('open_at')
+                    ->label(__('Open at'))
+                    ->required()
+                    ->seconds(false)
+                    ->timezone('Europe/Amsterdam');
             ]);
     }
 }
