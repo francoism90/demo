@@ -10,6 +10,13 @@ class Team extends Model implements HasCurrentTenantLabel
 {
     use HasFactory;
 
+    /**
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'open_at' => 'date:Y-m-d',
+    ];
+
     public function getCurrentTenantLabel(): string
     {
         return 'Current team';
